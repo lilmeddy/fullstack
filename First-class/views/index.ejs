@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Hello world</p>
+    <p>Hi <%= name %>, Welcome to Node class</p>
+    <div>
+        <% for( let i = 0; i < firstArr.length; i++ ) { %>
+        <div>
+            <p><%= firstArr[i].name %></p>
+            <p><%= firstArr[i].age %></p>
+        </div>
+        <% } %>
+    </div>
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            top: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+
+            font-family: sans-serif;
+            background: linear-gradient(#141e30, #243b55);
+        }
+
+        .cart {
+            position: absolute;
+            top: 50%;
+            left: 30%;
+            width: 400px;
+            padding: 40px;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, .5);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+            border-radius: 10px;
+        }
+
+        h2 {
+            margin: 0 0 30px;
+            padding: 0;
+            color: #fff;
+            text-align: center;
+        }
+
+        .cart-one {
+            position: relative;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: 30px;
+            border: none;
+            border-bottom: 1px solid #fff;
+            outline: none;
+            background: transparent;
+        }
+
+        label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #fff;
+            pointer-events: none;
+            transition: .5s;
+        }
+
+        input:focus~label,
+        input:valid~label {
+            top: -20px;
+            left: 0;
+            color: #03e9f4;
+            font-size: 12px;
+        }
+
+        button{
+            position: relative;
+            display: inline-block;
+            padding: 10px 20px;
+            color: #03e9f4;
+            font-size: 16px;
+            text-decoration: none;
+            text-transform: uppercase;
+            overflow: hidden;
+            transition: .5s;
+            margin-top: 40px;
+            letter-spacing: 4px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #03e9f4;
+            color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 100px #03e9f4;
+        }
+
+        button span {
+            position: absolute;
+            display: block;
+        }
+
+        button span:nth-child(1) {
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #03e9f4);
+            animation: anime 1s linear infinite;
+        }
+
+        @keyframes anime {
+            0% {
+                left: -100%;
+            }
+
+            50%,
+            100% {
+                left: 100%;
+            }
+        }
+
+       button span:nth-child(2) {
+            top: -100%;
+            right: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, transparent, #03e9f4);
+            animation: anim 1s linear infinite;
+            animation-delay: .25s
+        }
+
+        @keyframes anim {
+            0% {
+                top: -100%;
+            }
+
+            50%,
+            100% {
+                top: 100%;
+            }
+        }
+
+       button span:nth-child(3) {
+            bottom: 0;
+            right: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(270deg, transparent, #03e9f4);
+            animation: ani 1s linear infinite;
+            animation-delay: .5s
+        }
+
+        @keyframes ani {
+            0% {
+                right: -100%;
+            }
+
+            50%,
+            100% {
+                right: 100%;
+            }
+        }
+
+       button span:nth-child(4) {
+            bottom: -100%;
+            left: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(360deg, transparent, #03e9f4);
+            animation: nime 1s linear infinite;
+            animation-delay: .75s
+        }
+
+        @keyframes nime {
+            0% {
+                bottom: -100%;
+            }
+
+            50%,
+            100% {
+                bottom: 100%;
+            }
+        }
+        .car {
+            position: absolute;
+            top: 50%;
+            left: 60%;
+            width: 400px;
+            padding: 40px;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, .5);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+            border-radius: 10px;
+            color: #fff;
+        }
+        .car small{
+            color: #03e9f4;
+          
+        }
+        .flex{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .tot{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cart">
+        <h2>Cart</h2>
+        <form action="/list/index" method="post">
+            <div class="cart-one">
+                <input type="text" name="name" placeholder="Name">
+                <label>Cart-One</label>
+            </div>
+            <div class="cart-one">
+                <input type="text" name="quantity" placeholder="Quantity">
+                <label>Cart Two</label>
+            </div>
+            <div class="cart-one">
+                <input type="text" name="price" placeholder="Price">
+                <label>Cart Three</label>
+            </div>
+            <div class="cart-one">
+                <input type="email" name="email" placeholder="Email">
+                <label>Email</label>
+            </div>
+            <button>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+               Enter
+            </button> 
+           
+        </form>
+        
+    </div>
+    <div class="car">
+        <% for( let i = 0; i < Arr.length; i++ ) { %>
+                <p>Name: <small><%=Arr[i].name%></small></p>
+                <p>Quantity: <small><%=Arr[i].quantity%></small></p>
+                <p>Price: <small><%=Arr[i].price%></small></p>
+                <div class="flex">
+                    <form action="/list/edit/<%= Arr[i]._id %>" method="get">
+                        <button>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                           Edit
+                        </button>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+                    </form>
+                   
+                    <form action="/list/delete/<%= Arr[i]._id %>"  method="get">
+                        <button>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                           Delete
+                        </button>  
+                    
+                    </form>
+
+                    
+                </div>
+               
+                   
+        <% } %>
+        <div class="tot">
+            <button>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+               Total : <%= total %>
+            </button>  
+        </div>
+        
+    </div>
+</body>
+
+</html>
