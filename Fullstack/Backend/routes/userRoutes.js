@@ -1,8 +1,10 @@
-import { signup } from "../controllers/userController.js";
-import express from "express"
+import { login, signup } from "../controllers/userController.js";
+import express from "express";
 
-const userRoutes = express.Router()
+const userRoutes = express.Router();
 
 userRoutes.post("/signup", signup);
 
-export {userRoutes}
+userRoutes.post("/login", login);
+
+export { userRoutes };
